@@ -1,28 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Accounts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Record</th>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Listing Accounts</h1>
+  </div> <!-- end of panel heading -->
       <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @accounts.each do |account| %>
-      <tr>
-        <td><%= account.username %></td>
-        <td><%= account.record %></td>
-        <td><%= link_to 'Show', account %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= account.username %>
+        <%= account.record %>
+        <%= link_to 'Show', account %>
+       <%= link_to 'Edit', edit_account_path(account) %>
+        <%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %>
+
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 

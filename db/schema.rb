@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160126040747) do
+ActiveRecord::Schema.define(version: 20160127030623) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "username",   limit: 20
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160126040747) do
     t.string   "tage",        limit: 20
     t.integer  "case_year",   limit: 4
     t.integer  "case_number", limit: 10
+    t.string   "role",        limit: 20
   end
 
 end

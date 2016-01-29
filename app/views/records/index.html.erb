@@ -1,27 +1,34 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Listing Records</h1>
+  </div> <!-- End of panel heading -->
+    
+      <% @records.each do |record| %> 
+      <div class="views">
+        <div class="media" data-target="<%= record_path(record.id)%>">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" src="http://oi64.tinypic.com/2197upf.jpg" alt="...">
+            </a>
+          </div> <!-- end of media left -->
+          <div class="media-body">
+             <div class="media-heading">
+               <%= record.case_number %> / <%= record.case_year %> <br>
+               <%= record.tage %><br>
+               <%= record.role %>
+             </div>  <br>
+                  <%= record.name %> <br>
+              <div class="editing-btns">
+           
+              </div>
+          </div> <!-- end of media body -->
+      </div> <!-- end of views div -->
 
-<h1>Listing Records</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @records.each do |record| %>
-      <tr>
-        <td><%= record.name %></td>
-        <td><%= link_to 'Show', record %></td>
-        <td><%= link_to 'Edit', edit_record_path(record) %></td>
-        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Record', new_record_path %>
+     
+        </tr>
+      <% end %>
+  <div class="panel-footer">
+    <%= link_to 'New Record', new_record_path, :class => "btn btn-default" %>
+  </div> <!-- end of panel footer -->
+</div> <!-- end of panel -->

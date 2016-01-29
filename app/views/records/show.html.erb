@@ -1,21 +1,25 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @record.name %> <br>
-  <Strong>ID Type: </Strong>
-  <%= @record.id_type %>
-</p>
-<h1>Associated Accounts</h1>
-<% if @record.accounts.any? %>
-    <ul>
-      <% @record.accounts.each do |account| %>
-      <li> <%= link_to account, account %></li>
-      <% end %>
-    </ul>
-<% else %>
-  <h3> No Associated Accounts yet</h3>
-<% end %>
-
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<div class="panel">
+  <p>
+    <strong>Name:</strong>
+    <%= @record.name %> <br>
+    <Strong>ID Type: </Strong>
+    <%= @record.id_type %> <br>
+    <strong>Role:</strong>
+    <%= @record.role %>
+  </p>
+  <h1>Associated Accounts</h1>
+  <% if @record.accounts.any? %>
+      <ul>
+        <% @record.accounts.each do |account| %>
+        <li> <%= link_to account, account %></li>
+        <% end %>
+      </ul>
+  <% else %>
+    <h3> No Associated Accounts yet</h3>
+  <% end %>
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_record_path(@record) %> |
+    <%= link_to 'Back', records_path %>
+  </div> <!-- end of panel footer -->
+</div> <!-- end of panel div -->

@@ -1,8 +1,7 @@
 class Account < ActiveRecord::Base
-  belongs_to :record
-  
+  belongs_to :record  
   
   def to_s
-     username + " At " + site
+    username
   end
 end

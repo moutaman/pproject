@@ -15,10 +15,19 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %> <br>
     <%= f.label :id_type %> <br>
-    <%= f.text_field :id_type %>
+    <%= f.text_field :id_type %> <br>
+    <%= f.label :case_year, "Year" %> <br>
+    <%= f.text_field :case_year %> <br>
+    <%= f.label :case_number, "Case Number" %> <br>
+    <%= f.text_field :case_number %> <br>
+    <%= f.label :tage, "Tag" %> <br>
+    <%= f.text_field :tage %> <br>
+    <%= f.label :role %> <br>
+    <%= f.text_field :role %>
+   
   </div>
   
-  <h2> Associated Accounts</h2>
+  <h2> Associated Accounts </h2>
   <%= f.fields_for :accounts do |account| %>
     <div class="field">
       <%= account.label :username %><br>
