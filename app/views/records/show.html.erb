@@ -1,25 +1,37 @@
 <p id="notice"><%= notice %></p>
 <div class="panel">
-  <p>
-    <strong>Name:</strong>
-    <%= @record.name %> <br>
-    <Strong>ID Type: </Strong>
-    <%= @record.id_type %> <br>
-    <strong>Role:</strong>
-    <%= @record.role %>
-  </p>
-  <h1>Associated Accounts</h1>
-  <% if @record.accounts.any? %>
-      <ul>
-        <% @record.accounts.each do |account| %>
-        <li> <%= link_to account, account %></li>
-        <% end %>
-      </ul>
-  <% else %>
-    <h3> No Associated Accounts yet</h3>
-  <% end %>
+  <div class="panel-header">
+    <h2> Record for Case <%= @record.case_year %> / <%= @record.case_number %> </h2>
+  </div> <!-- end of panel header -->
+  <div class="panel-body">
+    <div class="views">
+        <div class="media" data-target="<%= record_path(@record.id)%>" >
+          <strong>Name:</strong>
+          <%= @record.name %> <br>
+          <Strong>ID Type: </Strong>
+          <%= @record.id_type %> <br>
+          <strong>Role:</strong>
+          <%= @record.role %>
+        </div> <!-- end of media -->
+    <% if @record.accounts.any? %>
+        <div class="associated-accoutns">
+          <div class="media">
+              <ul>
+                <% @record.accounts.each do |account| %>
+                <li data-target-a="<%= account_path(account.id)%>">
+                 <%= link_to account, account %>  On  <%= account.site %>
+                </li>
+                <% end %>
+              </ul>
+            <% else %>
+              <h3> No Associated Accounts yet</h3>
+            
+        </div> <!-- end of media associated accoutns -->
+      </div> <!-- end of class associated accounts -->
+    <% end %>
+  </div> <!-- end of view div class -->
+</div> <!-- end of panel div -->
   <div class="panel-footer">
     <%= link_to 'Edit', edit_record_path(@record) %> |
     <%= link_to 'Back', records_path %>
   </div> <!-- end of panel footer -->
-</div> <!-- end of panel div -->

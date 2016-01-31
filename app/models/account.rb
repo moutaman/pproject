@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-  belongs_to :record  
+  has_many_and_belongs_to :record  
   
   def to_s
     username

@@ -6,8 +6,8 @@
       <th colspan="3"></th>
 
     <% @accounts.each do |account| %>
-        <%= account.username %>
-        <%= account.record %>
+        <%= account.username %> 
+        <%= account.record %>  <br>
         <%= link_to 'Show', account %>
        <%= link_to 'Edit', edit_account_path(account) %>
         <%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %>

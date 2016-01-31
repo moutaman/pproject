@@ -3,7 +3,7 @@
   <div class="panel-heading">
     <h1>Listing Records</h1>
   </div> <!-- End of panel heading -->
-    
+  <div class="panel-body">
       <% @records.each do |record| %> 
       <div class="views">
         <div class="media" data-target="<%= record_path(record.id)%>">
@@ -28,6 +28,7 @@
      
         </tr>
       <% end %>
+  </div> <!-- end of panel body -->
   <div class="panel-footer">
     <%= link_to 'New Record', new_record_path, :class => "btn btn-default" %>
   </div> <!-- end of panel footer -->
